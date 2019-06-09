@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <style type="text/css">
+        body {
+            /*background-image: url(https://source.unsplash.com/user/twktt);*/
+            background-image: url(https://images2.alphacoders.com/555/555666.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            /*background-position: center;*/
+            margin: 0px;
+            color: white;
+            background-color: #06070b;
+            font-family: sans-serif;
+            overflow: hidden;
+        }
+        
+        #topBar {
+            position: fixed;
+            padding-left: 3px;
+            padding-right: 3px;
+            width: 100%;
+            height: 25px;
+            font-size: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        /*	#topBarLeft,#topBarRight{
+			width: 49.999%;
+			}*/
+        
+        #topBarRight {
+            position: fixed;
+            right: 2%;
+        }
+        
+        #formContainer {
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 50%;
+            left: 17px;
+            padding: 6px;
+            border-radius: 10px;
+            border: 1px solid #353535;
+        }
+        
+        #passwordInput {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 2px solid #ffffff;
+            border-radius: 8px;
+            padding: 7px;
+            color: white;
+        }
+        
+        #notification {
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            right: 10px;
+            top: 30px;
+            padding: 11px;
+            border-radius: 10px;
+            border: 1px solid #353535;
+            display: none;
+            animation: notification 3s both;
+            width: 25%;
+        }
+        
+        @keyframes notification {
+            0% {
+                transform: scale(0);
+                -webkit-transform: scale(0);
+            }
+            5% {
+                transform: scale(1.1);
+                -webkit-transform: scale(1.1);
+            }
+            20% {
+                transform: scale(1);
+                -webkit-transform: scale(1);
+            }
+            80% {
+                opacity: 1;
+                top: 30px;
+            }
+            100% {
+                opacity: 0;
+                top: -10px;
+                display: none;
+            }
+        }
+        
+        #mydiv {
+            position: absolute;
+            z-index: 9;
+            background-color: #ffffff;
+            text-align: left;
+            width: 70%;
+            border-radius: 5px;
+            height: 80%;
+            top: 20%;
+            left: 20%;
+
+        }
+        
+        #mydivheader {
+            padding-left: 10px;
+            padding-top: 4px;
+            padding-bottom:4px;
+            border-radius: 5px 5px 0px 0px;
+            cursor: move;
+            z-index: 10;
+            font-size: 12px;
+            background: rgb(94,84,82);
+			background: linear-gradient(180deg, rgba(94,84,82,1) 0%, rgba(66,64,57,1) 100%);
+            color: #fff;
+     	}
+    </style>
+</head>
+
+<body>
+    <div id="topBar">
+        <span id="topBarLeft">Ubuntu</span>
+        <!-- Clock -->
+        <span id="topBarRight"></span>
+    </div>
+    <div id="notification">
+        <h2 id="notifTitle" style="margin: 1px;">notification.title</h2>
+        <p id="notifText" style="margin: 1px;">notification.text</p>
+    </div>
+    <div id="showcase" style="display: none;color: black">
+        <div id="mydiv">
+            <div id="mydivheader"><b>Fake ubuntu</b></div>
+            <!-- <div style="background-color: white;">
+            	<input type="text" id="url" style="width : 70%;background-color: #ccc;border:none;color: black;margin-left: 3px;padding: 4px;"><button onclick="document.getElementById('inlineFrameExample').src = document.getElementById('url').value;">= ></button>
+            </div> -->
+            <div style="height: calc(100% - 22px);">
+            	<!-- <h1>Ubuntu login</h1>
+            	<p>This Ubuntu login was made in html by Cazeip, if you want to download it, you can do it by clicking the following link : </p> -->
+            	<iframe style="position: initial;width: 100%;border: none;height: 100%;" id="inlineFrameExample" title="Hey" src="../index.html" width="300" height="200">If this didn't load, try open this page on another browser</iframe>
+            </div>
+        </div>
+    </div>
+    <div id="login">
+        <div id="formContainer">
+            <p style="margin-top: 3px; ">Cazeip</p>
+            <input type="password" id="passwordInput" placeholder="Password">
+            <button onclick="authenticate()">Connect</button>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function updateTime() {
+            var today = new Date();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            document.getElementById("topBarRight").innerHTML = time;
+        }
+        setInterval(updateTime, 100);
+
+        function notification(title, text) {
+            document.getElementById("notification").style.display = "block";
+            document.getElementById("notification").style.opacity = "1 !important";
+            document.getElementById("notifTitle").innerHTML = title;
+            document.getElementById("notifText").innerHTML = text;
+            setTimeout(function() {
+                document.getElementById("notification").style.display = "none";
+                document.getElementById("notification").style.opacity = "1";
+            }, 2700);
+        }
+
+        function authenticate() {
+            if (document.getElementById("passwordInput").value == "password2019") {
+            	document.getElementById("showcase").style.display = "block";
+            	document.getElementById("login").style.display = "none";
+            } else {
+                notification("Couldn't authenticate", "The password is 'password2019'")
+            }
+        }
+        dragElement(document.getElementById("mydiv"));
+
+        function dragElement(elmnt) {
+            var pos1 = 0,
+                pos2 = 0,
+                pos3 = 0,
+                pos4 = 0;
+            if (document.getElementById(elmnt.id + "header")) {
+                // if present, the header is where you move the DIV from:
+                document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+            } else {
+                // otherwise, move the DIV from anywhere inside the DIV:
+                elmnt.onmousedown = dragMouseDown;
+            }
+
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // get the mouse cursor position at startup:
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                // call a function whenever the cursor moves:
+                document.onmousemove = elementDrag;
+            }
+
+            function elementDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // calculate the new cursor position:
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                // set the element's new position:
+                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            }
+
+            function closeDragElement() {
+                // stop moving when mouse button is released:
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        }
+    </script>
+</body>
+
+</html>
