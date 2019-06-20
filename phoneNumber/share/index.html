@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<title>Fone</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script type="text/javascript" src="qrcode.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+#importNumber{
+  background-image: url('../header.jpg');  
+}
+</style>
+<body>
+
+  <div class="bgimg w3-display-container w3-animate-opacity" id="importNumber">
+    <div class="w3-display-topleft w3-padding-large w3-xlarge">
+      <a href="../" class="w3-text-white">Home</a>
+    </div>
+    <div class="w3-display-middle">
+      <h1>Enter your number</h1>
+      <input class="w3-input w3-border" id="numberInput" placeholder="Enter your number" type="tel"><br>
+      <button class="w3-button w3-black" onclick="submitNumber()" style="width: 100%">Enter</button>
+    </div>
+  </div>
+  <div class="bgimg w3-display-container w3-animate-opacity">
+    <div class="w3-display-topmiddle">
+      <h2>Make your friend scan this QR code</h2>
+    </div>
+    <div class="w3-display-middle">
+      <div id="qrcode"></div>
+        <script type="text/javascript">
+        new QRCode(document.getElementById("qrcode"), ("http://cazeip.github.io/phoneNumber/open#"+localStorage.getItem("number")));
+        </script>
+    </div>
+  </div>
+  <script type="text/javascript">
+    if (localStorage.getItem("number") != null) {
+      document.getElementById("importNumber").style.display = "none";
+    }
+    function submitNumber(){
+      localStorage.setItem("number",document.getElementById("numberInput").value);
+      window.location.reload()
+    }
+  </script>
+</body>
+</html>
