@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script type="text/javascript" src="qrcode.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <style>
 body,h1 {font-family: "Raleway", sans-serif}
@@ -30,20 +31,19 @@ body, html {height: 100%}
       <button class="w3-button w3-black" onclick="submitNumber()" style="width: 100%">Enter</button>
     </div>
   </div>
-  <div class="bgimg w3-display-container w3-animate-opacity" id="scanNumber" style="display: none;">
+  <div class="bgimg w3-display-container w3-animate-opacity" id="scanNumber" style="display: none;background-color: black;color: white;">
     <div class="w3-display-topmiddle">
       <h2>Scan this QR code</h2>
     </div>
     <div class="w3-display-middle">
-      <div>       
-        <div id="qrcode"></div>
+      <div style="background-color: #1e2d51;padding: 8px;border-radius: 22px;text-align: center;color: white;">       
+        <div id="qrcode" style="background-color: white;padding: 10px;border-radius: 15px;"></div>
+        <h1><i class="fas fa-mobile"></i> Scan me</h1>
+        <span id="phoneNumberDisplay"></span>
       </div>
       <script type="text/javascript">
         new QRCode(document.getElementById("qrcode"), ("http://cazeip.github.io/phoneNumber/open#"+localStorage.getItem("number")));
       </script>
-    </div>
-    <div class="w3-display-bottommiddle">
-      <h3 id="phoneNumberDisplay"></h3>
     </div>
   </div>
   <script type="text/javascript">
