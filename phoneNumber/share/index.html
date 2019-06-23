@@ -30,9 +30,9 @@ body, html {height: 100%}
       <button class="w3-button w3-black" onclick="submitNumber()" style="width: 100%">Enter</button>
     </div>
   </div>
-  <div class="bgimg w3-display-container w3-animate-opacity">
+  <div class="bgimg w3-display-container w3-animate-opacity" id="scanNumber" style="display: none;">
     <div class="w3-display-topmiddle">
-      <h2>Make your friend scan this QR code</h2>
+      <h2>Scan this QR code</h2>
     </div>
     <div class="w3-display-middle">
       <div id="qrcode"></div>
@@ -40,11 +40,16 @@ body, html {height: 100%}
         new QRCode(document.getElementById("qrcode"), ("http://cazeip.github.io/phoneNumber/open#"+localStorage.getItem("number")));
         </script>
     </div>
+    <div class="w3-display-bottommiddle">
+      <h3 id="phoneNumberDisplay"></h3>
+    </div>
   </div>
   <script type="text/javascript">
     if (localStorage.getItem("number") != null) {
       document.getElementById("importNumber").style.display = "none";
+      document.getElementById("scanNumber").style.display = "block";
     }
+    document.getElementById("phoneNumberDisplay").innerHTML = localStorage.getItem("number");
     function submitNumber(){
       localStorage.setItem("number",document.getElementById("numberInput").value);
       window.location.reload()
