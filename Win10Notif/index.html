@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Win10 Notif</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="winnotif.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script type="text/javascript" src="winnotif.js"></script>
@@ -95,10 +96,10 @@
 <body>
 
 <div class="topnav" id="myTopnav">
- <a>Win10 Notifications</a>
+  <a href="http://cazeip.github.io/">Cazeip</a>
   <a href="#install">Installation</a>
-  <a href="#exec">Execute</a>
-  <a href="#dwn">Download</a>
+  <a href="#exec">Utilisation</a>
+  <a href="#dwn">Téléchargement</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
@@ -106,17 +107,17 @@
 
 	<div  style="background-color:  teal ;padding: 10px ;">
 		<br><br>
-<h1 id="install">How to install win10 notifications :</h1>
+<h1 id="install">Comment installer Win10 Notifications :</h1>
 
-<h2>1. Copy the files</h2>
+<h2>1. Copiez les documents</h2>
 
-<p>So, after downloading the files, copy the files :</p>
-<code>winnotif.js</code> and <code>winnotif.css</code> that are included.
+<p>Donc, après avoir téléchargé les fichiers, copiez les fichiers</p>
+<code>winnotif.js</code> et <code>winnotif.css</code> qui sont inclus.
 
-<h2>2. Import the files with :</h2>
-
+<h2>2. Importez les fichiers</h2>
+	<p>Mettez ces deux lignes dans le code HTML de votre page Web pour importer Win10Notifications</p>
 	<div class="w3-panel w3-card w3-light-grey"> 
-	  <h4>HTML Import Code</h4>
+	  <h4>Code d'importation HTML :</h4>
 	  <div class="w3-code htmlHigh notranslate">
    		
 		&lt;link rel="stylesheet" href="winnotif.css"&gt;<br>
@@ -124,10 +125,10 @@
 	  </div>
 	</div>
 
-<h2>3. Setup the code :</h2>
-<p>It's quite easy since you just have to copy a small element that will do everything</p>
+<h2>3. Mettez en place le code</h2>
+<p>C'est plutot facile puisque vous n'avez qu'à copier cet autre bout de code que vous mettrez dans la balise <code>&lt;body&gt;</code> de votre page Web.</p>
 	<div class="w3-panel w3-card w3-light-grey"> 
-	  <h4>HTML Setup Code</h4>
+	  <h4>Code de mise en place HTML</h4>
 	  <div class="w3-code htmlHigh notranslate">
    		&lt;div id="not"&gt;<br>
 			&lt;p id="title"&gt;&lt;/p&gt;<br>
@@ -140,38 +141,38 @@
 <div style="height: 500px;">
 	
 </div>
-<div style="	background-color: #6110a0;padding: 10px ;">
-<h2 id="exec">4. Use it</h2>
-<p>We finally finished ! (Well, we won't say it was hard).
-To show the notifiaction, you have to execute the following javascript:</p>
+<div style="	background-color: #ffffff;padding: 10px ;">
+<h2 id="exec">4. Utilisez le</h2>
+<p>Vous avez terminé ! (C'était pas ci difficile).
+Pour afficher la notification, vous devez faire exécuter la méthode <code>notif()</code> qui fait tout. Vous avez ci-dessous des exemples ainsi que des boutons pour tester les trpos exemples.</p>
 
 <div class="w3-panel w3-card w3-light-grey"> 
-  <h4>JavaScript Win10 Notifications Code</h4>
+  <h4>Code JavaScript de Win10 notifications</h4>
   <div class="w3-code jsHigh notranslate">
-    //Okay so, to show a simple notification, you put this code :<br>
+    //Ok, donc, pour afficher une notification simple, vous utilisez ça :<br>
     notif("It's a notif");<br><br>
-    //If you want a body text in the notification, jus put this code<br>
+    //Pour mettre une description dans la notification, mettez simplement ce code :<br>
     notif("Title","Put some body...");<br><br>
-    //Finally, let's change the dissapear delay... It is by default 10 seconds<br>
-    notif("Title","Put some body...",1); //Note: the duration is expressed in seconds
+    //Pour finir, vous pouvez changer le délai de désapparition... Il est par défaut de 10 secondes<br>
+    notif("Title","Put some body...",1); //Note: la durée est exprimée en secondes
   </div>
 </div>
-<p>Lets try them one by one :</p>
+<p>Essayons les uns par uns :</p>
 <div class="w3-row-padding w3-grayscale">
-<button class="w3-col m4 w3-margin-bottom" onclick="notif('It\'s a notif');">First</button>
+<button class="w3-col m4 w3-margin-bottom" onclick="notif('It\'s a notif');">Premier</button>
 <button class="w3-col m4 w3-margin-bottom" onclick="notif('Title','Put some body...');">Second</button>
-<button class="w3-col m4 w3-margin-bottom" onclick="notif('Title','Put some body...',1);">Third</button>
+<button class="w3-col m4 w3-margin-bottom" onclick="notif('Title','Put some body...',1);">Troisième</button>
 </div>
 </div>
 <div style="height: 200px;">
 	
 </div>
 <div style="	background-color: #ae6d0c;padding: 10px ;">
-	<h1 id="dwn">Download :</h1>
+	<h1 id="dwn">Téléchargement :</h1>
 
-	<p>Well, you have to install it, obviously</p>
-	<p>It's here :</p>
-	<a href="https://github.com/cazeip/win10Notif"><button>Download</button></a>
+	<p>Vous devez le télécharger, évidemment</p>
+	<p>C'est ici :</p>
+	<a href="https://github.com/cazeip/win10Notif"><button>Télécharger</button></a>
 </div>
 
 <div id="not">
