@@ -25,6 +25,11 @@
 			display: none;
 			width: 20%;
 		}
+		@media screen and (max-width: 600px) {
+			#not{
+				width: 90%;
+			}
+		}
 		@keyframes open{
 			100% { right: 5%; }
 		}
@@ -150,18 +155,18 @@ Pour afficher la notification, vous devez faire exécuter la méthode <code>noti
   <h4>Code JavaScript de Win10 notifications</h4>
   <div class="w3-code jsHigh notranslate">
     //Ok, donc, pour afficher une notification simple, vous utilisez ça :<br>
-    notif("It's a notif");<br><br>
+    notif("C'est une notif");<br><br>
     //Pour mettre une description dans la notification, mettez simplement ce code :<br>
-    notif("Title","Put some body...");<br><br>
+    notif("Titre","Description...");<br><br>
     //Pour finir, vous pouvez changer le délai de désapparition... Il est par défaut de 10 secondes<br>
-    notif("Title","Put some body...",1); //Note: la durée est exprimée en secondes
+    notif("Titre","Description...",1); //Note: la durée est exprimée en secondes
   </div>
 </div>
 <p>Essayons les uns par uns :</p>
 <div class="w3-row-padding w3-grayscale">
-<button class="w3-col m4 w3-margin-bottom" onclick="notif('It\'s a notif');">Premier</button>
-<button class="w3-col m4 w3-margin-bottom" onclick="notif('Title','Put some body...');">Second</button>
-<button class="w3-col m4 w3-margin-bottom" onclick="notif('Title','Put some body...',1);">Troisième</button>
+<button class="w3-col m4 w3-margin-bottom" onclick="notif('C\'est une notif');">Premier</button>
+<button class="w3-col m4 w3-margin-bottom" onclick="notif('Titre','Description...');">Second</button>
+<button class="w3-col m4 w3-margin-bottom" onclick="notif('Titre','Description...',1);">Troisième</button>
 </div>
 </div>
 <div style="height: 200px;">

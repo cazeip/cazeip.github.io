@@ -6,9 +6,8 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script type="text/javascript" src="qrcode.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <style>
-body,h1 {font-family: "Raleway", sans-serif}
+body,h1 {font-family: -apple-system, Helvetica, Arial, sans-serif;}
 body, html {height: 100%}
 .bgimg {
   min-height: 100%;
@@ -23,25 +22,26 @@ body, html {height: 100%}
 
   <div class="bgimg w3-display-container w3-animate-opacity" id="importNumber">
     <div class="w3-display-topleft w3-padding-large w3-xlarge">
-      <a href="../" class="w3-text-white">Home</a>
+      <a href="../" class="w3-text-white">Accueil</a>
     </div>
     <div class="w3-display-middle">
-      <h1>Enter your number</h1>
+      <h1>Entrez votre numéro</h1>
       <input class="w3-input w3-border" id="numberInput" placeholder="Enter your number" type="tel"><br>
-      <button class="w3-button w3-black" onclick="submitNumber()" style="width: 100%">Enter</button>
+      <button class="w3-button w3-black" onclick="submitNumber()" style="width: 100%">Ok</button>
     </div>
   </div>
   <div class="bgimg w3-display-container w3-animate-opacity" id="scanNumber" style="display: none;background-color: black;color: white;">
     <div class="w3-display-middle">
       <div style="background-color: #1e2d51;padding: 8px;border-radius: 22px;text-align: center;color: white;">       
         <div id="qrcode" style="background-color: white;padding: 10px;border-radius: 15px;"></div>
-        <h1><i class="fas fa-mobile"></i> Scan me</h1>
+        <h1><i class="fas fa-mobile"></i> Scannez moi</h1>
         <span id="phoneNumberDisplay"></span>
       </div>
       <script type="text/javascript">
         new QRCode(document.getElementById("qrcode"), ("http://cazeip.github.io/phoneNumber/open#"+localStorage.getItem("number")));
       </script>
     </div>
+    <button onclick="localStorage.clear();window.location.reload();" class="w3-display-bottommiddle w3-btn w3-blue w3-xlarge">Entrer un autre numéro</button>
   </div>
   <script type="text/javascript">
     if (localStorage.getItem("number") != null) {

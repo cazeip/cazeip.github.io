@@ -131,14 +131,14 @@
     </div>
     <div id="showcase" style="display: none;color: black">
         <div id="mydiv">
-            <div id="mydivheader"><b>Fake ubuntu</b></div>
+            <div id="mydivheader"><b>Faux ubuntu</b></div>
             <!-- <div style="background-color: white;">
             	<input type="text" id="url" style="width : 70%;background-color: #ccc;border:none;color: black;margin-left: 3px;padding: 4px;"><button onclick="document.getElementById('inlineFrameExample').src = document.getElementById('url').value;">= ></button>
             </div> -->
             <div style="height: calc(100% - 22px);">
             	<!-- <h1>Ubuntu login</h1>
             	<p>This Ubuntu login was made in html by Cazeip, if you want to download it, you can do it by clicking the following link : </p> -->
-            	<iframe style="position: initial;width: 100%;border: none;height: 100%;" id="inlineFrameExample" title="Hey" src="../index.html" width="300" height="200">If this didn't load, try open this page on another browser</iframe>
+            	<iframe style="position: initial;width: 100%;border: none;height: 100%;" id="inlineFrameExample" title="Hey" src="../index.html" width="300" height="200">Si cela ne se charge pas, essayez le sur un autre navigateur.</iframe>
             </div>
         </div>
     </div>
@@ -173,7 +173,7 @@
             	document.getElementById("showcase").style.display = "block";
             	document.getElementById("login").style.display = "none";
             } else {
-                notification("Couldn't authenticate", "The password is 'password2019'")
+                notification("Erreur d'authentification", "Le mot de passe est 'password2019'")
             }
         }
         dragElement(document.getElementById("mydiv"));
